@@ -7,7 +7,7 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
 
-    public int mPLV = 99; //플레이어 레벨의 최대값 (MaxPlayerLevel)
+    public int mPLV = 99; //플레이어 레벨의 최대값 (MaxPlayerLevel) //인스펙터 창에서 설정가능
     public TextMeshProUGUI currentLevel; //현재 레벨 표시
 
     // 실제 플레이어의 레벨 데이터를 저장할 필드

@@ -73,7 +73,7 @@ public class UIManager : MonoBehaviour
         {
             int level = int.Parse(levelInput.text); // 인풋필드 형 변환
             LevelManager.instance.LevelUP(level); // 레벨 매니저의 인스턴스 가져오기
-            //CardManager.instance.CardTargetLevel(); //카드 매니저의 인스턴스를 가져와 카드를 오픈할 레벨이 되는지 확인
+            //CardManager.instance.CardTargetLevel(); //카드 매니저의 인스턴스를 가져와 카드를 오픈할 레벨이 되는지 확인 <- 현재는 TargetLevel의 부재로 필요 없는 함수
         }
     }
 }   

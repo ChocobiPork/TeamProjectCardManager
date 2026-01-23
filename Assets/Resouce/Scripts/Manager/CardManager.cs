@@ -86,7 +86,7 @@ public class CardManager : MonoBehaviour
         }
         else
         {
-            GroupAni.SetTrigger("CardClose"); // 애니메이션 재생
+            GroupAni.SetTrigger("CardClose"); // 트리거 변경
             isOpen = false;
         }
     }
