@@ -58,7 +58,7 @@ public class LevelManager : MonoBehaviour
     }
     #endregion
 
-    // 어짜피 Set에서 받아오기에 
+    // 어짜피 Set에서 받아오기때문에 굳이 업데이트에서 항시 수정할 필요가 없음.
     //private void Update()
     //{
     //    currentLevel.text = currentPlayerLevel.ToString(); // 형변환
