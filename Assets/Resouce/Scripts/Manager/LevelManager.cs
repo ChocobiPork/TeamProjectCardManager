@@ -11,7 +11,7 @@ public class LevelManager : MonoBehaviour
     public TextMeshProUGUI currentLevel; //현재 레벨 표시
 
     // 실제 플레이어의 레벨 데이터를 저장할 필드
-    private int _currentPlayerLevel;
+    public int _currentPlayerLevel;
 
     // 프로퍼티를 사용하여 레벨 변경 감지 및 처리
     public int CurrentPlayerLevel

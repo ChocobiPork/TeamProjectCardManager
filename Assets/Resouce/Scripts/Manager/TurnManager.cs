@@ -14,7 +14,7 @@ public class TurnManager : MonoBehaviour
     public TextMeshProUGUI TurnOnwerText; // 현재 턴의 주인을 텍스트로 받기
     public TextMeshProUGUI currentTurnText; //현재  턴 수를 텍스트로 받기
 
-    private enum TurnOwner //턴의 주인을 Enum으로 받기
+    public enum TurnOwner //턴의 주인을 Enum으로 받기
     {
         Player,
         Monster
