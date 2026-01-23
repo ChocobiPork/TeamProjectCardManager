@@ -69,7 +69,7 @@ public class LevelManager : MonoBehaviour
         //현재 플레이어에게 카드가 보여지고 있다면 레벨업 불가
         if (CardManager.instance.showCard == true)
         {
-            Debug.Log("카드가 열린 상태에서는 레벨업을 할 수 없습니다.");
+            Debug.Log("카드가 보여지는 상태에서는 레벨업을 할 수 없습니다.");
             return; //반환
         }
         else //카드가 열린 상태가 아님
