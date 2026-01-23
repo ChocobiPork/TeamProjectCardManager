@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
         }
     }
 
+    //레벨 동기화
     public void LevelSynchronization()
     {
         playerLevel = LevelManager.instance._currentPlayerLevel;
