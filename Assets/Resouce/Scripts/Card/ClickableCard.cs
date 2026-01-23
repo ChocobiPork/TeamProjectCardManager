@@ -6,6 +6,11 @@ public class ClickableCard : MonoBehaviour
 {
     void Update()
     {
+        CardClickable();
+    }
+
+    private void CardClickable()
+    {
         // 마우스 왼쪽 버튼이 눌렸고 카드가 보여지고 있을때 -> 플레이어가 카드 선택이 아닐땐 작동하지 않도록 트리거 설정
         if (Input.GetMouseButtonDown(0) && CardManager.instance.showCard)
         {
@@ -31,7 +36,7 @@ public class ClickableCard : MonoBehaviour
                 }
                 else //카드 태그도 아니고 오픈도 아니라면
                 {
-                    Debug.Log("뭘 누르고 있는거임"); 
+                    Debug.Log("뭘 누르고 있는거임");
                 }
             }
         }
