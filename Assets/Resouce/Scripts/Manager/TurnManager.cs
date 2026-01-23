@@ -40,7 +40,7 @@ public class TurnManager : MonoBehaviour
         currentTurnOwner = TurnOwner.Player.ToString(); // 형 변환
     }
 
-    private void Update()
+    private void Update() //텍스트 UI와 동기화
     {
         TurnOnwerText.text = currentTurnOwner;
         currentTurnText.text = currentTurnId.ToString(); // 형 변환
@@ -48,7 +48,7 @@ public class TurnManager : MonoBehaviour
         //TurnCountAndCardOpen();
     }
 
-    public void NextTurn() //다음 턴으로 넘기기
+    public void NextTurn() //다음 턴으로 넘기기 -> 턴종료 시에 함수 불러오면 됨.
     {
         if (CardManager.instance.showCard) //카드가 보여지고 있을때는 턴이 넘어가지 않도록
         {
