@@ -91,6 +91,12 @@ public class CardManager : MonoBehaviour
         }
     }
 
+    public void onCardClick()
+    { 
+        
+    }
+
+    #region 숨김 항목 - 버린 함수들
     /// <summary>
     /// //현재 레벨이 카드를 오픈하기 위한 레벨과 맞다면 카드를 오픈하는 함수
     /// </summary>
@@ -121,4 +127,5 @@ public class CardManager : MonoBehaviour
     //        ShowCard();
     //    }
     //}
+    #endregion
 }
