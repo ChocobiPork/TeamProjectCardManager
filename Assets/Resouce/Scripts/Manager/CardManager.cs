@@ -35,7 +35,7 @@ public class CardManager : MonoBehaviour
 
     private void Update()
     {
-        CardTargetLevel();
+        //CardTargetLevel();
     }
 
     public void ShowCard() //카드를 보여주는 함수
@@ -48,6 +48,12 @@ public class CardManager : MonoBehaviour
     {
         CardGroup.SetActive(false);
         showCard = false;
+        isOpen = false;
+    }
+
+    public void CardInfo() //카드의 정보를 저장하는 함수 -> 예 : 현재 카드의 속성,이름,정보
+    {
+
     }
 
     /// <summary>
@@ -55,8 +61,16 @@ public class CardManager : MonoBehaviour
     /// </summary>
     public void CardOpen()
     {
-        isOpen = true;
-        GroupAni.SetTrigger("CardOpen"); // 애니메이션 재생
+        if (showCard == false) //카드를 보여주고 있지 있다면
+        {
+            Debug.Log("현재 카드를 보여주고 있지 않기에 카드를 열수 없습니다.");
+            return;
+        }
+        else
+        {
+            GroupAni.SetTrigger("CardOpen"); // 애니메이션 재생
+            isOpen = true;
+        }
     }
 
 
@@ -65,8 +79,16 @@ public class CardManager : MonoBehaviour
     /// </summary>
     public void CardClose()
     {
-        isOpen = false;
-        GroupAni.SetTrigger("CardClose"); // 애니메이션 재생
+        if (showCard == false) //카드를 보여주고 있지 않다면
+        {
+            Debug.Log("현재 카드를 보여주고 있지 않기에 카드를 열수 없습니다");
+            return;
+        }
+        else
+        {
+            GroupAni.SetTrigger("CardClose"); // 애니메이션 재생
+            isOpen = false;
+        }
     }
 
     /// <summary>
@@ -87,14 +109,16 @@ public class CardManager : MonoBehaviour
     //    }
     //}
 
+    //타겟 레벨 삭제로 필요 없어짐
+
     /// <summary>
     /// 현재 플레이어의 레벨이 카드를 오픈하기 위한 레벨과 맞다면 카드를 오픈하는 함수
     /// </summary>
-    public void CardTargetLevel()
-    {
-        if (LevelManager.instance.targetLevels.Contains(LevelManager.instance.currentPlayerLevel))
-        {
-            ShowCard();
-        }
-    }
+    //public void CardTargetLevel()
+    //{
+    //    if (LevelManager.instance.targetLevels.Contains(LevelManager.instance.currentPlayerLevel))
+    //    {
+    //        ShowCard();
+    //    }
+    //}
 }
