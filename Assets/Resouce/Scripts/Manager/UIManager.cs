@@ -9,6 +9,15 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance;
     public TMP_InputField levelInput;
 
+    [Header("일시정지 관련")]
+    public bool isOpenPauseMenu = false; //일시정지 메뉴를 열었는가; (기본값 : false)
+    public GameObject pauseMenu;
+
+    [Header("사운드 관련")]
+    public Slider masterSlider;
+    public Slider bgmSlider;
+    public Slider sfxSlider;
+
     #region 싱글톤
     private void Awake()
     {
@@ -23,6 +32,33 @@ public class UIManager : MonoBehaviour
         }
     }
     #endregion
+
+    private void Start()
+    {
+        pauseMenu.SetActive(false);
+    }
+
+    private void Update()
+    {
+        PauseMenu();
+    }
+
+    private void PauseMenu()//일시정지 메뉴
+    {
+        if (Input.GetKeyDown(KeyCode.Escape)) //esc 키를 눌렀고 일시정지중이 아니였다면.
+        {
+            if (isOpenPauseMenu == false)
+            {
+                isOpenPauseMenu = true;
+                pauseMenu.SetActive(true);
+            }
+            else
+            {
+                isOpenPauseMenu = false;
+                pauseMenu.SetActive(false);
+            }
+        }
+    }
 
     public void NextTurnBtnDown() // 다음 턴으로
     {

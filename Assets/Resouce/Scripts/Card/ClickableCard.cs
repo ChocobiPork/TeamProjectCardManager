@@ -12,7 +12,7 @@ public class ClickableCard : MonoBehaviour
     private void CardClickable()
     {
         // 마우스 왼쪽 버튼이 눌렸고 카드가 보여지고 있을때 -> 플레이어가 카드 선택이 아닐땐 작동하지 않도록 트리거 설정
-        if (Input.GetMouseButtonDown(0) && CardManager.instance.showCard)
+        if (Input.GetMouseButtonDown(0) && CardManager.instance.showCard && UIManager.Instance.isOpenPauseMenu != true)
         {
             // 마우스 위치에서 화면을 통과하는 Ray를 만듦.
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); //카메라(스크린 -> 보여지는 화면)기준으로 마우스 입력을 받음
@@ -41,8 +41,4 @@ public class ClickableCard : MonoBehaviour
             }
         }
     }
-
-    //구조
-    // 1.플레이어가 버튼식으로 카드 전체를 보이게 -> 카드를 본 뒤에 그 후 선택
-    // 2.선택후에 나머지(선택을 하지 않은 카드들)들은 바로 사라지지않고 하나씩 차례대로 닫히고 난 뒤에 Close();
 }
