@@ -991,6 +991,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerLevel: 0
   isPlayerTurn: 0
+  fireAudioClip: {fileID: 8300000, guid: 860a7b96f7fc83349bcef9a7756dc3ee, type: 3}
 --- !u!1 &1019655499
 GameObject:
   m_ObjectHideFlags: 0
@@ -3269,12 +3270,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3172a721a5324f4e961d9ace9b9d38c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  masterVolume: 0
-  bgmVolume: 0
-  sfxVloume: 0
-  s_master: 0
-  s_bgm: 0
-  s_sfx: 0
+  masterVolume: 1
+  bgmVolume: 1
+  sfxVloume: 1
+  s_master: 1
+  s_bgm: 1
+  s_sfx: 1
 --- !u!4 &2095566011
 Transform:
   m_ObjectHideFlags: 0

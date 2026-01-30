@@ -7,10 +7,14 @@ public class Player : MonoBehaviour
     public int playerLevel;
     public bool isPlayerTurn; //현재 턴의 오너가 플레이어면 True;
 
+    [Header("플레이어 사운드")]
+    public AudioClip fireAudioClip;
+
     public void Update()
     {
         TurnSynchronization();
         LevelSynchronization();
+        Testing();
     }
 
 
@@ -32,5 +36,14 @@ public class Player : MonoBehaviour
     public void LevelSynchronization()
     {
         playerLevel = LevelManager.instance._currentPlayerLevel;
+    }
+
+    // 테스트용
+    public void Testing()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            SoundManager.instance.SoundPlay("sfx","PlayerFireSound", fireAudioClip);
+        }
     }
 }
