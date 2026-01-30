@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     {
         TurnSynchronization();
         LevelSynchronization();
-        Testing();
+        //Testing();
     }
 
 
@@ -39,11 +39,11 @@ public class Player : MonoBehaviour
     }
 
     // 테스트용
-    public void Testing()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            SoundManager.instance.SoundPlay("sfx","PlayerFireSound", fireAudioClip);
-        }
-    }
+    //public void Testing()
+    //{
+    //    if (Input.GetMouseButtonDown(0))
+    //    {
+    //        SoundManager.instance.SoundPlay("sfx","PlayerFireSound", fireAudioClip);
+    //    }
+    //}
 }
