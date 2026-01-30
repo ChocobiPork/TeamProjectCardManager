@@ -6,7 +6,7 @@ using System.Linq;
 
 public class CardManager : MonoBehaviour
 {
-    public static CardManager instance;
+    //public static CardManager Instance;
 
     public GameObject CardGroup; // 카드 뭉탱이
     public Animator GroupAni; //카드의 애니메이션
@@ -14,20 +14,20 @@ public class CardManager : MonoBehaviour
     public bool showCard = false;//카드를 보여준 상태인지s
     public bool isOpen = false; // 카드가 열린 상태인지
 
-    #region 싱글톤
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-    #endregion
+    //#region 싱글톤
+    //private void Awake()
+    //{
+    //    if (Instance == null)
+    //    {
+    //        Instance = this;
+    //        DontDestroyOnLoad(gameObject);
+    //    }
+    //    else
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
+    //#endregion
 
     private void Start()
     {
@@ -102,7 +102,7 @@ public class CardManager : MonoBehaviour
     /// </summary>
     //public void CardTargetLevel()
     //{
-    //    if (LevelManager.instance.targetLevels.Contains(GameManager.Instance.playerLevel)) //레벨값이 레벨 매니저에서 원하는 레벨에 맞는다면
+    //    if (GameManager.Instance.LevelMgr.targetLevels.Contains(GameManager.Instance.playerLevel)) //레벨값이 레벨 매니저에서 원하는 레벨에 맞는다면
     //    {
     //        if (isOpen == false) //카드가 오픈상태 인가 까지 계산
     //        {
@@ -122,7 +122,7 @@ public class CardManager : MonoBehaviour
     /// </summary>
     //public void CardTargetLevel()
     //{
-    //    if (LevelManager.instance.targetLevels.Contains(LevelManager.instance.currentPlayerLevel))
+    //    if (GameManager.Instance.LevelMgr.targetLevels.Contains(GameManager.Instance.LevelMgr.currentPlayerLevel))
     //    {
     //        ShowCard();
     //    }

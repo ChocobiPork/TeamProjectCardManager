@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    public static LevelManager instance;
+    //public static LevelManager Instance;
 
     public int mPLV = 99; //플레이어 레벨의 최대값 (MaxPlayerLevel) //인스펙터 창에서 설정가능
     public TextMeshProUGUI currentLevel; //현재 레벨 표시
@@ -43,20 +43,20 @@ public class LevelManager : MonoBehaviour
         CurrentPlayerLevel = 1;
     }
 
-    #region 싱글톤
-    private void Awake() //싱글톤
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(instance);
-        }
-    }
-    #endregion
+    //#region 싱글톤
+    //private void Awake() //싱글톤
+    //{
+    //    if (Instance == null)
+    //    {
+    //        Instance = this;
+    //        DontDestroyOnLoad(gameObject);
+    //    }
+    //    else
+    //    {
+    //        Destroy(Instance);
+    //    }
+    //}
+    //#endregion
 
     // 어짜피 Set에서 받아오기때문에 굳이 업데이트에서 항시 수정할 필요가 없음.
     //private void Update()
@@ -67,7 +67,7 @@ public class LevelManager : MonoBehaviour
     public void LevelUP(int _ILevel) // IncreaseLevel
     {
         //현재 플레이어에게 카드가 보여지고 있다면 레벨업 불가
-        if (CardManager.instance.showCard == true)
+        if (GameManager.Instance.CardMgr.showCard == true)
         {
             Debug.Log("카드가 보여지는 상태에서는 레벨업을 할 수 없습니다.");
             return; //반환
@@ -97,6 +97,6 @@ public class LevelManager : MonoBehaviour
     public void HandlePlayerLevelUp(int oldLevel, int newLevel)
     {
         Debug.Log("레벨이 변경됨");
-        CardManager.instance.ShowCard(); //레벨이 변경됨을 감지했으니 카드를 보여줌
+        GameManager.Instance.CardMgr.ShowCard(); //레벨이 변경됨을 감지했으니 카드를 보여줌
     }
 }

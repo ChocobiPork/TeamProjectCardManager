@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
 
     public void TurnSynchronization() //플레이어의 턴 동기화 -> 동기화라 해야할지 모르겠음
     {
-        if (TurnManager.instance.currentTurnOwner == TurnManager.TurnOwner.Player.ToString())
+        if (GameManager.Instance.TurnMgr.currentTurnOwner == TurnManager.TurnOwner.Player.ToString())
         {
             isPlayerTurn = true;
         }
@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
     //레벨 동기화
     public void LevelSynchronization()
     {
-        playerLevel = LevelManager.instance._currentPlayerLevel;
+        playerLevel = GameManager.Instance.LevelMgr._currentPlayerLevel;
     }
 
     // 테스트용
@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
     //{
     //    if (Input.GetMouseButtonDown(0))
     //    {
-    //        SoundManager.instance.SoundPlay("sfx","PlayerFireSound", fireAudioClip);
+    //        GameManager.Instance.SoundMgr.SoundPlay("sfx", "PlayerFireSound", fireAudioClip);
     //    }
     //}
 }

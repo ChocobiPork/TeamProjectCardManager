@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager Instance;
+    //public static UIManager Instance;
     public TMP_InputField levelInput;
 
     [Header("일시정지 관련")]
@@ -18,20 +18,20 @@ public class UIManager : MonoBehaviour
     public Slider bgmSlider;
     public Slider sfxSlider;
 
-    #region 싱글톤
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-    #endregion
+    //#region 싱글톤
+    //private void Awake()
+    //{
+    //    if (Instance == null)
+    //    {
+    //        Instance = this;
+    //        DontDestroyOnLoad(gameObject);
+    //    }
+    //    else
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
+    //#endregion
 
     private void Start()
     {
@@ -62,7 +62,7 @@ public class UIManager : MonoBehaviour
 
     public void NextTurnBtnDown() // 다음 턴으로
     {
-        TurnManager.instance.NextTurn(); // 턴 매니저 인스턴스에서 받아오기
+        GameManager.Instance.TurnMgr.NextTurn(); // 턴 매니저 인스턴스에서 받아오기
     }
 
     /// <summary>
@@ -70,9 +70,9 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void CardOpenBtn()
     {
-        if (CardManager.instance.isOpen == false)
+        if (GameManager.Instance.CardMgr.isOpen == false)
         {
-            CardManager.instance.CardOpen();
+            GameManager.Instance.CardMgr.CardOpen();
         }
         else
         {
@@ -86,9 +86,9 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void CardCloseBtn()
     {
-        if (CardManager.instance.isOpen == true)
+        if (GameManager.Instance.CardMgr.isOpen == true)
         {
-            CardManager.instance.CardClose();
+            GameManager.Instance.CardMgr.CardClose();
         }
         else
         {
@@ -108,8 +108,8 @@ public class UIManager : MonoBehaviour
         else
         {
             int level = int.Parse(levelInput.text); // 인풋필드 형 변환
-            LevelManager.instance.LevelUP(level); // 레벨 매니저의 인스턴스 가져오기
-            //CardManager.instance.CardTargetLevel(); //카드 매니저의 인스턴스를 가져와 카드를 오픈할 레벨이 되는지 확인 <- 현재는 TargetLevel의 부재로 필요 없는 함수
+            GameManager.Instance.LevelMgr.LevelUP(level); // 레벨 매니저의 인스턴스 가져오기
+            //GameManager.Instance.CardMgr.CardTargetLevel(); //카드 매니저의 인스턴스를 가져와 카드를 오픈할 레벨이 되는지 확인 <- 현재는 TargetLevel의 부재로 필요 없는 함수
         }
     }
 }   

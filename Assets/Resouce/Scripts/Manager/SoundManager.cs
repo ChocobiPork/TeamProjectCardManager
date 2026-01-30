@@ -5,7 +5,7 @@ using UnityEngine.Profiling;
 
 public class SoundManager : MonoBehaviour
 {
-    public static SoundManager instance;
+    //public static SoundManager Instance;
 
     [Header("유저 슬라이더 설정값 (0~1)")]
     public float masterVolume;
@@ -18,30 +18,30 @@ public class SoundManager : MonoBehaviour
     public float s_bgm;
     public float s_sfx;
 
-    #region 싱글톤
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-    #endregion
+    //#region 싱글톤
+    //private void Awake()
+    //{
+    //    if (Instance == null)
+    //    {
+    //        Instance = this;
+    //        DontDestroyOnLoad(gameObject);
+    //    }
+    //    else
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
+    //#endregion
 
     private void Update()
     {
         // 일시정지 메뉴가 열려있을 때 실시간으로 값을 가져오고 계산하기
-        if (UIManager.Instance.isOpenPauseMenu)
+        if (GameManager.Instance.UIMgr.isOpenPauseMenu == true)
         {
             // UI 슬라이더에서 현재 위치값을 가져옴
-            masterVolume = UIManager.Instance.masterSlider.value;
-            bgmVolume = UIManager.Instance.bgmSlider.value;
-            sfxVloume = UIManager.Instance.sfxSlider.value;
+            masterVolume = GameManager.Instance.UIMgr.masterSlider.value;
+            bgmVolume = GameManager.Instance.UIMgr.bgmSlider.value;
+            sfxVloume = GameManager.Instance.UIMgr.sfxSlider.value;
 
             // 마스터 볼륨을 기준으로 백분율 계산 후 's'에 저장
             CalculateS_Storage();

@@ -4,15 +4,36 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static GameManager Instance;
+
+    // 묶어줄 매니저들
+    public SoundManager SoundMgr;
+    public LevelManager LevelMgr;
+    public TurnManager TurnMgr;
+    public CardManager CardMgr;
+    public UIManager UIMgr;
+
+    private void Awake()
     {
-            
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+            //InitManagers(); // 매니저 초기화
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //private void InitManagers()
+    //{
+    //    // 컴포넌트 방식으로 가져오기
+    //    SoundMgr = GetComponentInChildren<SoundManager>();
+    //    UIMgr = GetComponentInChildren<UIManager>();
+    //    LevelMgr = GetComponentInChildren<LevelManager>();
+    //    CardMgr = GetComponentInChildren<CardManager>();
+    //    TurnMgr = GetComponentInChildren<TurnManager>();
+    //}
 }

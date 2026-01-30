@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TurnManager : MonoBehaviour
 {
-    public static TurnManager instance;
+    //public static TurnManager Instance;
 
     public string currentTurnOwner; // 현재 턴의 주인
     public int currentTurnId; // 현재 턴 수
@@ -20,20 +20,20 @@ public class TurnManager : MonoBehaviour
         Monster
     }
 
-    #region 싱글톤
-    private void Awake() //싱글톤
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-    #endregion
+    //#region 싱글톤
+    //private void Awake() //싱글톤
+    //{
+    //    if (Instance == null)
+    //    {
+    //        Instance = this;
+    //        DontDestroyOnLoad(gameObject);
+    //    }
+    //    else
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
+    //#endregion
 
     private void Start()
     {
@@ -50,7 +50,7 @@ public class TurnManager : MonoBehaviour
 
     public void NextTurn() //다음 턴으로 넘기기 -> 턴종료 시에 함수 불러오면 됨.
     {
-        if (CardManager.instance.showCard) //카드가 보여지고 있을때는 턴이 넘어가지 않도록
+        if (GameManager.Instance.CardMgr.showCard) //카드가 보여지고 있을때는 턴이 넘어가지 않도록
         {
             Debug.Log("카드가 보여지고 있을땐 턴이 넘어가지 않습니다.");
             return;
@@ -77,7 +77,7 @@ public class TurnManager : MonoBehaviour
     //{
     //    if (currentTurnId == cardOpenTurn) //현재 턴이 카드를 오픈할 턴이 되었을떄
     //    {
-    //        CardManager.instance.CardOpen(); //카드 매니저 인스턴스에서 함수 받기
+    //        GameManager.Instance.CardMgr.CardOpen(); //카드 매니저 인스턴스에서 함수 받기
     //    }
     //}
 
