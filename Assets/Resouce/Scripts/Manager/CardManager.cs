@@ -11,7 +11,7 @@ public class CardManager : MonoBehaviour
     public GameObject CardGroup; // 카드 뭉탱이
     public Animator GroupAni; //카드의 애니메이션
 
-    public bool showCard = false;//카드를 보여준 상태인지s
+    public bool showCard = false;//카드를 보여준 상태인지
     public bool isOpen = false; // 카드가 열린 상태인지
 
     //#region 싱글톤

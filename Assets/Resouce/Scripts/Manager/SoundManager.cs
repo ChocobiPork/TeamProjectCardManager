@@ -60,6 +60,7 @@ public class SoundManager : MonoBehaviour
         s_sfx = masterVolume * sfxVloume;
     }
 
+
     public void SoundPlay(string type, string soundName , AudioClip clip)
     {
         GameObject go = new GameObject(type + "_" +soundName + "Sound");

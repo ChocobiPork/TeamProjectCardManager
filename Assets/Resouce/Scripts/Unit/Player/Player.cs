@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     {
         TurnSynchronization();
         LevelSynchronization();
-        //Testing();
+        Testing();
     }
 
 
@@ -38,12 +38,13 @@ public class Player : MonoBehaviour
         playerLevel = GameManager.Instance.LevelMgr._currentPlayerLevel;
     }
 
-    // 테스트용
-    //public void Testing()
-    //{
-    //    if (Input.GetMouseButtonDown(0))
-    //    {
-    //        GameManager.Instance.SoundMgr.SoundPlay("sfx", "PlayerFireSound", fireAudioClip);
-    //    }
-    //}
+    //테스트용
+    public void Testing()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            GameManager.Instance.SoundMgr.SoundPlay("sfx", "PlayerFireSound", fireAudioClip);
+            Debug.Log("플레이어 사운드 재생 테스트");
+        }
+    }
 }
