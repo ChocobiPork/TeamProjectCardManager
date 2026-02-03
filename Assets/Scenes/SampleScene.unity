@@ -2138,16 +2138,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1551687115}
   m_CullTransparentMesh: 1
---- !u!1 &1566110492 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 65498437144117828, guid: c4aa4a938e9486942b982fe00c9b8477, type: 3}
-  m_PrefabInstance: {fileID: 1779812675}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1566110493 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1420650682632882644, guid: c4aa4a938e9486942b982fe00c9b8477, type: 3}
-  m_PrefabInstance: {fileID: 1779812675}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1571452949
 GameObject:
   m_ObjectHideFlags: 0
@@ -2929,13 +2919,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 616773d546c1e4c48bb570a47333a10e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardGroup: {fileID: 1566110492}
-  GroupAni: {fileID: 1566110493}
+  CardGroup: {fileID: 0}
+  GroupAni: {fileID: 0}
   showCard: 0
   isOpen: 0
+  cardCloseAnimationDuration: 0.55
   instantiatedCards: []
   assignedRarities: 
-  generelCardPrefab: {fileID: 3122407132275929496, guid: f162b11754b9d10449f07faf516ea64b, type: 3}
+  legendChance: 0.074
+  generalCardPrefab: {fileID: 3122407132275929496, guid: f162b11754b9d10449f07faf516ea64b, type: 3}
   legendCardPrefab: {fileID: 3122407132275929496, guid: 92e9a4a5b9bd8b44e846344809b911a5, type: 3}
   spawnPoints:
   - {fileID: 352601975}
