@@ -67,7 +67,7 @@ public class LevelManager : MonoBehaviour
     public void LevelUP(int _ILevel) // IncreaseLevel
     {
         //현재 플레이어에게 카드가 보여지고 있다면 레벨업 불가
-        if (GameManager.Instance.CardMgr.showCard == true)
+        if (GameManager.Instance.CardMgr.isOpen)
         {
             Debug.Log("카드가 보여지는 상태에서는 레벨업을 할 수 없습니다.");
             return; //반환
@@ -97,6 +97,6 @@ public class LevelManager : MonoBehaviour
     public void HandlePlayerLevelUp(int oldLevel, int newLevel)
     {
         Debug.Log("레벨이 변경됨");
-        GameManager.Instance.CardMgr.ShowCard(); //레벨이 변경됨을 감지했으니 카드를 보여줌
+        GameManager.Instance.CardMgr.CardRarityOpen(); //레벨이 변경됨을 감지했으니 카드를 보여줌
     }
 }

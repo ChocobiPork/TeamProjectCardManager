@@ -50,7 +50,7 @@ public class TurnManager : MonoBehaviour
 
     public void NextTurn() //다음 턴으로 넘기기 -> 턴종료 시에 함수 불러오면 됨.
     {
-        if (GameManager.Instance.CardMgr.showCard) //카드가 보여지고 있을때는 턴이 넘어가지 않도록
+        if (GameManager.Instance.CardMgr.isOpen) //카드가 보여지고 있을때는 턴이 넘어가지 않도록
         {
             Debug.Log("카드가 보여지고 있을땐 턴이 넘어가지 않습니다.");
             return;

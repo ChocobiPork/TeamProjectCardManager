@@ -266,6 +266,68 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2797343643741659204, guid: 8103780e69fae9146ad207e276959bd9, type: 3}
   m_PrefabInstance: {fileID: 2202727603534628146}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &352601974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 352601975}
+  m_Layer: 0
+  m_Name: CardSpawnPosision 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &352601975
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352601974}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -15, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &409372916
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 409372917}
+  m_Layer: 0
+  m_Name: CardSpawnPosision 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &409372917
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409372916}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &429678880
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,6 +404,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &510054069
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 510054070}
+  m_Layer: 0
+  m_Name: CardSpawnPosision 4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &510054070
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510054069}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 15, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &572045467
 GameObject:
   m_ObjectHideFlags: 0
@@ -1214,7 +1307,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -286}
+  m_AnchoredPosition: {x: 409, y: -454}
   m_SizeDelta: {x: 347.3313, y: 131.9303}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1053291070
@@ -1263,7 +1356,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 823106377}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: CardOpenBtn
+        m_MethodName: CardRarityOpenBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2055,6 +2148,37 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 1420650682632882644, guid: c4aa4a938e9486942b982fe00c9b8477, type: 3}
   m_PrefabInstance: {fileID: 1779812675}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1571452949
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1571452950}
+  m_Layer: 0
+  m_Name: CardSpawnPosision 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1571452950
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571452949}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1607513454
 GameObject:
   m_ObjectHideFlags: 0
@@ -2602,7 +2726,7 @@ GameObject:
   - component: {fileID: 1663218775}
   - component: {fileID: 1663218774}
   m_Layer: 5
-  m_Name: CardOpenBtn (1)
+  m_Name: CardCloseBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2674,7 +2798,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 823106377}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: CardCloseBtn
+        m_MethodName: CardRarityCloseBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2809,6 +2933,15 @@ MonoBehaviour:
   GroupAni: {fileID: 1566110493}
   showCard: 0
   isOpen: 0
+  instantiatedCards: []
+  assignedRarities: 
+  generelCardPrefab: {fileID: 3122407132275929496, guid: f162b11754b9d10449f07faf516ea64b, type: 3}
+  legendCardPrefab: {fileID: 3122407132275929496, guid: 92e9a4a5b9bd8b44e846344809b911a5, type: 3}
+  spawnPoints:
+  - {fileID: 352601975}
+  - {fileID: 1571452950}
+  - {fileID: 409372917}
+  - {fileID: 510054070}
 --- !u!4 &1692129216
 Transform:
   m_ObjectHideFlags: 0
@@ -2854,7 +2987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 827495375232901524, guid: c4aa4a938e9486942b982fe00c9b8477, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -21.82
       objectReference: {fileID: 0}
     - target: {fileID: 827495375232901524, guid: c4aa4a938e9486942b982fe00c9b8477, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3348,29 +3481,33 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 194
       objectReference: {fileID: 0}
+    - target: {fileID: 1006828987107620354, guid: 8103780e69fae9146ad207e276959bd9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1458682758775694150, guid: 8103780e69fae9146ad207e276959bd9, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1458682758775694150, guid: 8103780e69fae9146ad207e276959bd9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1458682758775694150, guid: 8103780e69fae9146ad207e276959bd9, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2777077569806129554, guid: 8103780e69fae9146ad207e276959bd9, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2777077569806129554, guid: 8103780e69fae9146ad207e276959bd9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2777077569806129554, guid: 8103780e69fae9146ad207e276959bd9, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2797343643741659204, guid: 8103780e69fae9146ad207e276959bd9, type: 3}
       propertyPath: m_Pivot.x
@@ -3458,23 +3595,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5501506493112245782, guid: 8103780e69fae9146ad207e276959bd9, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5501506493112245782, guid: 8103780e69fae9146ad207e276959bd9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5501506493112245782, guid: 8103780e69fae9146ad207e276959bd9, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5735527722440924899, guid: 8103780e69fae9146ad207e276959bd9, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5735527722440924899, guid: 8103780e69fae9146ad207e276959bd9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5853952117111933213, guid: 8103780e69fae9146ad207e276959bd9, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3486,11 +3623,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6267486301747598432, guid: 8103780e69fae9146ad207e276959bd9, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6267486301747598432, guid: 8103780e69fae9146ad207e276959bd9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6687496011218481285, guid: 8103780e69fae9146ad207e276959bd9, type: 3}
       propertyPath: m_Value
@@ -3502,11 +3639,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7307495495744542739, guid: 8103780e69fae9146ad207e276959bd9, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7307495495744542739, guid: 8103780e69fae9146ad207e276959bd9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7601710364092838547, guid: 8103780e69fae9146ad207e276959bd9, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3536,6 +3673,10 @@ SceneRoots:
   - {fileID: 2110591417}
   - {fileID: 1675582543}
   - {fileID: 572045468}
+  - {fileID: 352601975}
+  - {fileID: 1571452950}
+  - {fileID: 409372917}
+  - {fileID: 510054070}
   - {fileID: 963194228}
   - {fileID: 705507995}
   - {fileID: 1779812675}

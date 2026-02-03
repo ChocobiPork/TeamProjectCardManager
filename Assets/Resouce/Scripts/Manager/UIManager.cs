@@ -65,36 +65,63 @@ public class UIManager : MonoBehaviour
         GameManager.Instance.TurnMgr.NextTurn(); // 턴 매니저 인스턴스에서 받아오기
     }
 
-    /// <summary>
-    /// 카드 오픈 버튼
-    /// </summary>
-    public void CardOpenBtn()
+    //새롭게 만든 카드 오픈 버튼
+    public void CardRarityOpenBtn()
     {
         if (GameManager.Instance.CardMgr.isOpen == false)
         {
-            GameManager.Instance.CardMgr.CardOpen();
+            GameManager.Instance.CardMgr.CardRarityOpen();
         }
         else
         {
-            Debug.Log("이미 오픈 상태임");
+            Debug.LogError("이미 카드가 오픈된 상태기에 동작할 수 없습니다!");
         }
     }
+
+    public void CardRarityCloseBtn()
+    {
+        if (GameManager.Instance.CardMgr.isOpen == true)
+        {
+            GameManager.Instance.CardMgr.ResetCardList();
+        }
+        else
+        {
+            Debug.LogError("이미 카드가 클로즈된 상태기에 동작할 수 없습니다!");
+        }
+    }
+
+    //----------------------------------
+
+    /// <summary>
+    /// 카드 오픈 버튼
+    /// </summary>
+    //public void CardOpenBtn()
+    //{
+    //    if (GameManager.Instance.CardMgr.isOpen == false)
+    //    {
+    //        GameManager.Instance.CardMgr.CardOpen();
+    //    }
+    //    else
+    //    {
+    //        Debug.Log("이미 오픈 상태임");
+    //    }
+    //}
 
 
     /// <summary>
     /// 카드 클로즈 버튼
     /// </summary>
-    public void CardCloseBtn()
-    {
-        if (GameManager.Instance.CardMgr.isOpen == true)
-        {
-            GameManager.Instance.CardMgr.CardClose();
-        }
-        else
-        {
-            Debug.Log("이미 클로즈 상태임");
-        }
-    }
+    //public void CardCloseBtn()
+    //{
+    //    if (GameManager.Instance.CardMgr.isOpen == true)
+    //    {
+    //        GameManager.Instance.CardMgr.CardClose();
+    //    }
+    //    else
+    //    {
+    //        Debug.Log("이미 클로즈 상태임");
+    //    }
+    //}
 
     /// <summary>
     /// 인풋필드에 있는 레벨을 감지하고 레벨을 올려주는 버튼
