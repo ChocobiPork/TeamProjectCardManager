@@ -147,9 +147,9 @@ public class CardManager : MonoBehaviour
                 // 클릭된 카드와 현재 카드가 같다면 (클릭된 카드)
                 else
                 {
-                    // "CardSelect" 트리거 실행
-                    cardAnimator.SetTrigger("CardSelect");
-                    Debug.Log($"{card.name}에 Select 애니메이션 적용");
+                    //// "CardSelect" 트리거 실행
+                    //cardAnimator.SetTrigger("CardSelect");
+                    //Debug.Log($"{card.name}에 Select 애니메이션 적용");
                 }
             }
         }
