@@ -50,8 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f83f16482dcfae43855e5c5e90ea500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardNumber: 0
-  CardName: 
+  rarity: 0
 --- !u!33 &538999594501534913
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -217,7 +216,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 978249462, guid: 45a15f56a3dfa3b44ad62d522619dc31, type: 3}
+  m_Sprite: {fileID: -984237252, guid: 42297a35c805f5a40afa1761bc031cd8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -301,7 +300,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -281090506, guid: a829a293e798a1844b691e2c7b542b0d, type: 3}
+  m_Sprite: {fileID: -1320127879, guid: 0a29cdc39ecc9b24abb8cf49b4bb2857, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -2923,7 +2923,7 @@ MonoBehaviour:
   GroupAni: {fileID: 0}
   showCard: 0
   isOpen: 0
-  cardCloseAnimationDuration: 0.55
+  cardCloseAnimationDuration: 0.8
   instantiatedCards: []
   assignedRarities: 
   legendChance: 0.074
@@ -2934,6 +2934,7 @@ MonoBehaviour:
   - {fileID: 1571452950}
   - {fileID: 409372917}
   - {fileID: 510054070}
+  selectCardList: 
 --- !u!4 &1692129216
 Transform:
   m_ObjectHideFlags: 0
