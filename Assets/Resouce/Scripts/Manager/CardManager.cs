@@ -9,10 +9,10 @@ public class CardManager : MonoBehaviour
 {
     //public static CardManager instance;
 
-    public GameObject CardGroup; // 카드 뭉탱이
-    public Animator GroupAni; //카드의 애니메이션
+    //public GameObject CardGroup; // 카드 뭉탱이
+    //public Animator GroupAni; //카드의 애니메이션
 
-    public bool showCard = false;//카드를 보여준 상태인지
+    //public bool showCard = false;//카드를 보여준 상태인지
     public bool isOpen = false; // 카드가 열린 상태인지
 
     //--신규로 작성중인 구간
@@ -22,10 +22,10 @@ public class CardManager : MonoBehaviour
 
     // 동적으로 생성된 카드 오브젝트들을 저장할 리스트
     [Header("생성된 카드들")]
-    public List<GameObject> instantiatedCards = new List<GameObject>();
+    private List<GameObject> instantiatedCards = new List<GameObject>();
     // 카드 등급을 저장할 리스트
     [Header("카드 등급들")]
-    public List<Card.CardRarity> assignedRarities = new List<Card.CardRarity>();
+    private List<Card.CardRarity> assignedRarities = new List<Card.CardRarity>();
 
     [Header("희귀도 설정")]
     [Range(0f, 1f)] // 0 ~ 1 까지
@@ -159,7 +159,7 @@ public class CardManager : MonoBehaviour
     {
         // 지정된 시간만큼 기다립니다.
         yield return new WaitForSeconds(cardCloseAnimationDuration);
-
+            
         Debug.Log("애니메이션 대기 시간 종료. 카드 리셋 함수 호출.");
         ResetCardList();
     }
