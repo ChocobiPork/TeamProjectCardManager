@@ -1,10 +1,16 @@
+using TMPro;
 using UnityEngine;
 
 public class ClickableCard : MonoBehaviour
 {
+
     void Update()
     {
         CardClickable();
+    }
+
+    private void Start()
+    {
     }
 
     private void CardClickable()
@@ -23,9 +29,11 @@ public class ClickableCard : MonoBehaviour
                 if (hit.collider.CompareTag("Card") && GameManager.Instance.CardMgr.isOpen)
                 {
                     Debug.Log($"현재 클릭한 오브젝트 : {hit.collider.gameObject.name}");
+                    Card card = hit.collider.GetComponent<Card>();
 
                     // ResetCardList() 대신, 클릭된 오브젝트를 넘겨주면서 닫기 함수 호출
                     GameManager.Instance.CardMgr.CloseOtherCards(hit.collider.gameObject);
+                    GameManager.Instance.CardMgr.AddSelectCard(card.rarity); //카드 리스트에 선택한 카드 추가
                 }
                 else if (hit.collider.CompareTag("Card"))
                 {

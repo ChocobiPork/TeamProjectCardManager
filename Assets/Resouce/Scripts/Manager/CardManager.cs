@@ -4,15 +4,10 @@ using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using System.Linq;
 
-public enum CardRarity
-{
-    General,
-    Legend
-}
 
 public class CardManager : MonoBehaviour
 {
-    //public static CardManager Instance;
+    //public static CardManager instance;
 
     public GameObject CardGroup; // 카드 뭉탱이
     public Animator GroupAni; //카드의 애니메이션
@@ -30,7 +25,7 @@ public class CardManager : MonoBehaviour
     public List<GameObject> instantiatedCards = new List<GameObject>();
     // 카드 등급을 저장할 리스트
     [Header("카드 등급들")]
-    public List<CardRarity> assignedRarities = new List<CardRarity>();
+    public List<Card.CardRarity> assignedRarities = new List<Card.CardRarity>();
 
     [Header("희귀도 설정")]
     [Range(0f, 1f)] // 0 ~ 1 까지
@@ -43,12 +38,15 @@ public class CardManager : MonoBehaviour
     [Header("카드가 생성될 위치")]
     public Transform[] spawnPoints; // 카드가 생성될 위치 (4개의 Transform 필요)
 
+    [Header("플레이어에 저장되어있는 카드들")]
+    public List<Card.CardRarity> selectCardList = new List<Card.CardRarity>();
+
     #region 싱글톤
     //private void Awake()
     //{
-    //    if (Instance == null)
+    //    if (instance == null)
     //    {
-    //        Instance = this;
+    //        instance = this;
     //        DontDestroyOnLoad(gameObject);
     //    }
     //    else
@@ -60,6 +58,7 @@ public class CardManager : MonoBehaviour
 
     private void Start()
     {
+        Card card = GetComponent<Card>();
     }
 
     private void Update()
@@ -68,42 +67,37 @@ public class CardManager : MonoBehaviour
     }
 
     // UIManager에서 "클릭" 이벤트 발생 시 호출될 함수
+    // CardRarityOpen 함수 내부 수정
     public void CardRarityOpen()
     {
         isOpen = true;
-        //foreach (GameObject card in instantiatedCards)
-        //{
-        //    Destroy(card);
-        //}
-        //instantiatedCards.Clear();
-        //assignedRarities.Clear();
 
-
-        // 4개의 위치에 카드 생성 및 등급 할당
         for (int i = 0; i < spawnPoints.Length; i++)
         {
-            CardRarity rarity;
+            Card.CardRarity rarity;
             float randomPoint = Random.value;
 
             if (randomPoint < legendChance)
-            {
-                rarity = CardRarity.Legend;
-            }
+                rarity = Card.CardRarity.Legend;
             else
-            {
-                rarity = CardRarity.General;
-            }
+                rarity = Card.CardRarity.General;
 
             assignedRarities.Add(rarity);
 
-            // 등급에 맞는 프리팹 선택
-            GameObject cardPrefab = (rarity == CardRarity.General) ? generalCardPrefab : legendCardPrefab; //삼항연산자 문법
+            GameObject cardPrefab = (rarity == Card.CardRarity.General) ? generalCardPrefab : legendCardPrefab;
 
-            // 해당 위치에 프리팹 인스턴스화 (생성)
+            // 카드 생성
             GameObject newCard = Instantiate(cardPrefab, spawnPoints[i].position, spawnPoints[i].rotation);
             instantiatedCards.Add(newCard);
 
-            Debug.Log($"카드 {i + 1} ({spawnPoints[i].name} 위치) 등급: {rarity}");
+            // 생성된 카드 스크립트에 등급 정보 심어주기
+            Card cardScript = newCard.GetComponent<Card>();
+            if (cardScript != null)
+            {
+                cardScript.rarity = rarity; // 여기서 실제 등급을 할당
+            }
+
+            Debug.Log($"카드 {i + 1} 등급 할당 완료 : {rarity}");
         }
     }
 
@@ -170,6 +164,10 @@ public class CardManager : MonoBehaviour
         ResetCardList();
     }
 
+    public void AddSelectCard(Card.CardRarity cardRarity) //선택한 카드를 플레이어 속성에 넣어주는 함수
+    {
+        selectCardList.Add(cardRarity);
+    }
 
     //---------------------------
 
@@ -227,7 +225,7 @@ public class CardManager : MonoBehaviour
     /// </summary>
     //public void CardTargetLevel()
     //{
-    //    if (GameManager.Instance.LevelMgr.targetLevels.Contains(GameManager.Instance.playerLevel)) //레벨값이 레벨 매니저에서 원하는 레벨에 맞는다면
+    //    if (GameManager.instance.levelMgr.targetLevels.Contains(GameManager.instance.playerLevel)) //레벨값이 레벨 매니저에서 원하는 레벨에 맞는다면
     //    {
     //        if (isOpen == false) //카드가 오픈상태 인가 까지 계산
     //        {
@@ -247,7 +245,7 @@ public class CardManager : MonoBehaviour
     /// </summary>
     //public void CardTargetLevel()
     //{
-    //    if (GameManager.Instance.LevelMgr.targetLevels.Contains(GameManager.Instance.LevelMgr.currentPlayerLevel))
+    //    if (GameManager.instance.levelMgr.targetLevels.Contains(GameManager.instance.levelMgr.currentPlayerLevel))
     //    {
     //        ShowCard();
     //    }
