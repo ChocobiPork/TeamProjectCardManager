@@ -8,6 +8,7 @@ public class Card : MonoBehaviour
         Legend
     }
 
-    // 카드가 실제로 가질 등급을 저장하는 변수
     public CardRarity rarity;
+    // 아래에 카드의 이름, 공격력, 효과 등 추가 데이터를 넣기
+    public string cardName;
 }

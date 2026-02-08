@@ -2921,15 +2921,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpen: 0
   cardCloseAnimationDuration: 0.65
-  legendChance: 0.12
-  generalCardPrefab: {fileID: 3122407132275929496, guid: f162b11754b9d10449f07faf516ea64b, type: 3}
-  legendCardPrefab: {fileID: 3122407132275929496, guid: 92e9a4a5b9bd8b44e846344809b911a5, type: 3}
+  legendChance: 0.524
+  generalCardPool:
+  - {fileID: 3122407132275929496, guid: ac95a258dcdeba44da1aba0c8ac462c7, type: 3}
+  - {fileID: 3122407132275929496, guid: 2eddf712295b24a4b9cdf9c24473787c, type: 3}
+  - {fileID: 3122407132275929496, guid: 2e9e26ca4dfbd5c40a68888bf16b7b35, type: 3}
+  legendCardPool: []
   spawnPoints:
   - {fileID: 352601975}
   - {fileID: 1571452950}
   - {fileID: 409372917}
   - {fileID: 510054070}
-  selectCardList: 
+  selectCardNames: []
 --- !u!4 &1692129216
 Transform:
   m_ObjectHideFlags: 0
