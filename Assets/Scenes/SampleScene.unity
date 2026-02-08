@@ -2921,7 +2921,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpen: 0
   cardCloseAnimationDuration: 0.65
-  legendChance: 0.524
+  legendChance: 0
   generalCardPool:
   - {fileID: 3122407132275929496, guid: ac95a258dcdeba44da1aba0c8ac462c7, type: 3}
   - {fileID: 3122407132275929496, guid: 2eddf712295b24a4b9cdf9c24473787c, type: 3}
