@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4901715135822865774}
   - component: {fileID: 7626711254284626801}
   - component: {fileID: 4284340460999086374}
+  - component: {fileID: 84928976469259804}
   m_Layer: 0
   m_Name: Boomerang
   m_TagString: Untagged
@@ -46,9 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93f6f1bbfa2a0ff458f8df41d78ba3b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  speed: 25
-  returnObject: {fileID: 0}
+  speed: 30
 --- !u!212 &7626711254284626801
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -90,7 +89,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2100358337, guid: 0424336fa1cab6142a7ce4901dd1615e, type: 3}
+  m_Sprite: {fileID: 2107464188, guid: bd6b2e603ec313a4c89ac64fa487a0c8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -128,3 +127,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &84928976469259804
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5835082331336300644}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0f2c492355d786741bba46e0d3bb1863, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
