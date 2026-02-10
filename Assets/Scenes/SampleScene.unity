@@ -1083,7 +1083,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boomerangPrefab: {fileID: 5835082331336300644, guid: 236ed32a670c2f04d88f6153b6bd97cc, type: 3}
-  boomerangLevel: 1
+  boomerangLevel: 0
 --- !u!1 &1019655499
 GameObject:
   m_ObjectHideFlags: 0
