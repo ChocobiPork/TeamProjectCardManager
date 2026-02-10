@@ -1971,6 +1971,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1342711486}
   m_CullTransparentMesh: 1
+--- !u!1 &1446562602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1446562604}
+  - component: {fileID: 1446562603}
+  m_Layer: 0
+  m_Name: Frame
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1446562603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446562602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9eeaba674098cd4f8677291cacece5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: 50
+  color: {r: 0.25729796, g: 0.9245283, b: 0.32999393, a: 1}
+--- !u!4 &1446562604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446562602}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.9470717, y: 1.8023796, z: -0.04533027}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1487050926 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6687496011218481285, guid: 8103780e69fae9146ad207e276959bd9, type: 3}
@@ -2925,6 +2971,7 @@ MonoBehaviour:
   - {fileID: 3122407132275929496, guid: ac95a258dcdeba44da1aba0c8ac462c7, type: 3}
   - {fileID: 3122407132275929496, guid: 2eddf712295b24a4b9cdf9c24473787c, type: 3}
   - {fileID: 3122407132275929496, guid: 2e9e26ca4dfbd5c40a68888bf16b7b35, type: 3}
+  - {fileID: 3122407132275929496, guid: f162b11754b9d10449f07faf516ea64b, type: 3}
   legendCardPool:
   - {fileID: 3122407132275929496, guid: 92e9a4a5b9bd8b44e846344809b911a5, type: 3}
   spawnPoints:
@@ -3640,3 +3687,4 @@ SceneRoots:
   - {fileID: 1301527211}
   - {fileID: 690940757}
   - {fileID: 824618454}
+  - {fileID: 1446562604}

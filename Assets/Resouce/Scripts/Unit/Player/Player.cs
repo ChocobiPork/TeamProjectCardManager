@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     {
         if (boomerangPrefab == null) return;
 
-        // 현재 레벨만큼 반복문 실행 (최대 8레벨까지 대응 가능)
+        // 현재 레벨만큼 반복문 실행
         int count = Mathf.Clamp(boomerangLevel, 1, shotDirections.Length);
 
         for (int i = 0; i < count; i++)
