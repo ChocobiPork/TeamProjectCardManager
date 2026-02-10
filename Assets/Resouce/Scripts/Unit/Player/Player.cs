@@ -4,24 +4,21 @@ public class Player : MonoBehaviour
 {
     [Header("설정")]
     public GameObject boomerangPrefab;
-    [Range(1, 8)] public int boomerangLevel = 1; // 테스트를 위해 인스펙터에서 조절 가능
+    [Range(1, 5)] public int boomerangLevel = 1; // 테스트를 위해 인스펙터에서 조절 가능
 
     // 레벨에 따른 방향 정의 (상, 하, 좌, 우, 좌상, 좌하, 우상, 우하)
     private Vector2[] shotDirections = new Vector2[]
     {
         Vector2.up,          // 1레벨: 상
-        Vector2.down,        // 2레벨: 하
-        Vector2.left,        // 3레벨: 좌
-        Vector2.right,       // 4레벨: 우
-        new Vector2(-1, 1),  // 5레벨: 좌상
-        new Vector2(-1, -1), // 6레벨: 좌하
-        new Vector2(1, 1),   // 7레벨: 우상
-        new Vector2(1, -1)   // 8레벨: 우하
+        Vector2.left,        // 2레벨: 하
+        Vector2.right,        // 3레벨: 좌
+        new Vector2(-1,-1),     // 4레벨: 우
+        new Vector2(1,-1),  // 5레벨: 좌상
     };
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !GameManager.Instance.CardMgr.isOpen)
         {
             ShootBoomerangs();
         }

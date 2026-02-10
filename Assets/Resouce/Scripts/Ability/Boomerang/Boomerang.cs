@@ -41,7 +41,7 @@ public class Boomerang : MonoBehaviour
         Vector2 direction = (Vector2)player.position - (Vector2)transform.position;
         rb.velocity = direction.normalized * speed;
 
-        if (Vector2.Distance(transform.position, player.position) < 0.7f) // 거리를 살짝 늘려 안정적으로 삭제
+        if (Vector2.Distance(transform.position, player.position) < 0.1f) //삭제 범위
             Destroy(gameObject);
     }
 }
