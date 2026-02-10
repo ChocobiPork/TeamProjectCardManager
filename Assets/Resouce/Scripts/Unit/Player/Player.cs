@@ -1,50 +1,53 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int playerLevel;
-    public bool isPlayerTurn; //현재 턴의 오너가 플레이어면 True;
+    [Header("설정")]
+    public GameObject boomerangPrefab;
+    [Range(1, 8)] public int boomerangLevel = 1; // 테스트를 위해 인스펙터에서 조절 가능
 
-    [Header("플레이어 사운드")]
-    public AudioClip fireAudioClip;
-
-    public void Update()
+    // 레벨에 따른 방향 정의 (상, 하, 좌, 우, 좌상, 좌하, 우상, 우하)
+    private Vector2[] shotDirections = new Vector2[]
     {
-        TurnSynchronization();
-        LevelSynchronization();
-        //Testing();
-    }
+        Vector2.up,          // 1레벨: 상
+        Vector2.down,        // 2레벨: 하
+        Vector2.left,        // 3레벨: 좌
+        Vector2.right,       // 4레벨: 우
+        new Vector2(-1, 1),  // 5레벨: 좌상
+        new Vector2(-1, -1), // 6레벨: 좌하
+        new Vector2(1, 1),   // 7레벨: 우상
+        new Vector2(1, -1)   // 8레벨: 우하
+    };
 
-
-    //아래 함수들은 동기화라기보단 플레이어에게 직접적으로 보여주는 역할을 함
-
-    public void TurnSynchronization() //플레이어의 턴 동기화 -> 동기화라 해야할지 모르겠음
+    void Update()
     {
-        if (GameManager.Instance.TurnMgr.currentTurnOwner == TurnManager.TurnOwner.Player.ToString())
+        if (Input.GetMouseButtonDown(0))
         {
-            isPlayerTurn = true;
-        }
-        else
-        {
-            isPlayerTurn = false;
+            ShootBoomerangs();
         }
     }
 
-    //레벨 동기화
-    public void LevelSynchronization()
+    void ShootBoomerangs()
     {
-        playerLevel = GameManager.Instance.LevelMgr._currentPlayerLevel;
-    }
+        if (boomerangPrefab == null) return;
 
-    //테스트용
-    //public void Testing()
-    //{
-    //    if (Input.GetMouseButtonDown(0))
-    //    {
-    //        GameManager.Instance.SoundMgr.SoundPlay("sfx", "PlayerFireSound", fireAudioClip);
-    //        Debug.Log("플레이어 사운드 재생 테스트");
-    //    }
-    //}
+        // 현재 레벨만큼 반복문 실행 (최대 8레벨까지 대응 가능)
+        int count = Mathf.Clamp(boomerangLevel, 1, shotDirections.Length);
+
+        for (int i = 0; i < count; i++)
+        {
+            // 1. 부메랑 생성
+            GameObject go = Instantiate(boomerangPrefab, transform.position, Quaternion.identity);
+
+            // 2. 해당 순서의 방향 가져오기
+            Vector2 dir = shotDirections[i];
+
+            // 3. 발사
+            Boomerang boomerang = go.GetComponent<Boomerang>();
+            if (boomerang != null)
+            {
+                boomerang.Shot(dir,this.transform);
+            }
+        }
+    }
 }

@@ -29,18 +29,34 @@ public class CardManager : MonoBehaviour
         if (isOpen) return;
         isOpen = true;
 
+        List<GameObject> tempGeneralPool = new List<GameObject>(generalCardPool);
+        List<GameObject> tempLegendPool = new List<GameObject>(legendCardPool);
+
         for (int i = 0; i < spawnPoints.Length; i++)
         {
             Card.CardRarity rarity = (Random.value < legendChance) ? Card.CardRarity.Legend : Card.CardRarity.General;
-            GameObject selectedPrefab = GetRandomCardFromPool(rarity);
+            List<GameObject> targetPool = (rarity == Card.CardRarity.Legend) ? tempLegendPool : tempGeneralPool;
 
-            if (selectedPrefab != null)
+            //만약 해당 등급의 카드가 풀에 더 이상 없다면 반대편 풀에서 가져옴
+            if (targetPool.Count == 0)
             {
-                GameObject newCard = Instantiate(selectedPrefab, spawnPoints[i].position, spawnPoints[i].rotation); 
+                targetPool = (rarity == Card.CardRarity.Legend) ? tempGeneralPool : tempLegendPool;
+                rarity = (rarity == Card.CardRarity.Legend) ? Card.CardRarity.General : Card.CardRarity.Legend;
+            }
+
+            if (targetPool.Count > 0)
+            {
+                int randomIndex = Random.Range(0, targetPool.Count);
+                GameObject selectedPrefab = targetPool[randomIndex];
+
+                GameObject newCard = Instantiate(selectedPrefab, spawnPoints[i].position, spawnPoints[i].rotation);
                 instantiatedCards.Add(newCard);
 
                 Card cardScript = newCard.GetComponent<Card>();
                 if (cardScript != null) cardScript.rarity = rarity;
+
+                //사용한 카드 임시풀에서 제거
+                targetPool.RemoveAt(randomIndex);
             }
         }
     }
@@ -59,7 +75,7 @@ public class CardManager : MonoBehaviour
 
     public void AddSelectCard(GameObject clickedCardInstance)
     {
-        // Instantiate 시 붙는 "(Clone)" 문구 제거하여 순수 이름만 추출
+        // Instantiate 시 붙는 "(Clone)" 문구 제거
         string cleanName = clickedCardInstance.name.Replace("(Clone)", "").Trim();
 
         selectCardNames.Add(cleanName);
@@ -79,8 +95,8 @@ public class CardManager : MonoBehaviour
 
     IEnumerator WaitForAnimationsAndResetRoutine()
     {
-        yield return new WaitForSeconds(cardCloseAnimationDuration);
-        ResetCardList();
+        yield return new WaitForSeconds(cardCloseAnimationDuration); //카드 닫히는 시간만큼 기다리기
+        ResetCardList(); //카드 전체 리스트를 지우는 함수 실행
     }
 
     public void ResetCardList()
